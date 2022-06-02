@@ -69,9 +69,10 @@ func getOptsByConfig(c core.CryptoSuiteConfig) *bccspSw.SwOpts {
 	opts := &bccspSw.SwOpts{
 		HashFamily: c.SecurityAlgorithm(),
 		SecLevel:   c.SecurityLevel(),
-		FileKeystore: &bccspSw.FileKeystoreOpts{
-			KeyStorePath: c.KeyStorePath(),
-		},
+		//FileKeystore: &bccspSw.FileKeystoreOpts{
+		//	KeyStorePath: c.KeyStorePath(),
+		//},
+		InmemKeystore: &bccspSw.InmemKeystoreOpts{},
 	}
 	logger.Debug("Initialized SW cryptosuite")
 
